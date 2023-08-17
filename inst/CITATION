@@ -4,7 +4,7 @@ bibentry(
   author = "M. Iqbal Jeelani and Salvatore S. Mangiafico",
   organization = "Sher-e-Kashmir University of Agricultural Sciences and Technology of Kashmir",
   address = "Jammu and Kashmir",
-  note = "version 0.1.0",
+  note = "version 0.1.1",
   year = 2023,
   url = "https://CRAN.R-project.org/package=ImML/"
 )
