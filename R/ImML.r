@@ -72,35 +72,77 @@ ImML <- function(data, plotit=TRUE, setseed=NULL, verbose=FALSE, ...) {
   
   # Linear Regression model
   lrModel <- lm(Volume ~ Diameter + Height, data = train)
-  if(verbose){print(lrModel)}
-  
+  if(verbose){
+    cat("\n")
+    cat("###########################################################", "\n")
+    cat("#############    Linear Regression - Train    #############", "\n")
+    print(lrModel)
+    }
+    
   # Decision Tree model
   dtModel <- rpart(Volume ~ Diameter + Height, data = train)
-  if(verbose){print(dtModel)}
+  if(verbose){
+    cat("\n")
+    cat("###########################################################", "\n")
+    cat("#############      Decision Tree - Train      #############", "\n")
+    print(dtModel)
+    }
   
   # Random Forest model
   rfModel <- randomForest(Volume ~ Diameter + Height, data = train)
-  if(verbose){print(rfModel)}
+  if(verbose){
+    cat("\n")
+    cat("##########################################################", "\n")
+    cat("#############      Random Forest - Train     #############", "\n")
+    print(rfModel)
+    }
   
   # SVM model
   svmModel <- svm(Volume ~ Diameter + Height, data = train)
-  if(verbose){print(svmModel)} 
+  if(verbose){
+    cat("\n")
+    cat("##########################################################", "\n")
+    cat("############# Support Vector Machine - Train #############", "\n")
+    print(svmModel)
+    }
   
   # Linear Regression model
   lrModel <- lm(Volume ~ Diameter + Height, data = test)
-  if(verbose){print(lrModel)}
+  if(verbose){
+    cat("\n")
+    cat("##########################################################", "\n")
+    cat("#############    Linear Regression - Test    #############", "\n")
+    print(lrModel)
+    }
   
   # Decision Tree model
   dtModel <- rpart(Volume ~ Diameter + Height, data = test)
-  if(verbose){print(dtModel)}
+  if(verbose){
+    cat("\n")
+    cat("##########################################################", "\n")
+    cat("#############      Decision Tree - Test      #############", "\n")
+    print(dtModel)
+    }
   
   # Random Forest model
   rfModel <- randomForest(Volume ~ Diameter + Height, data = test)
-  if(verbose){print(rfModel)}
+  if(verbose){
+    cat("\n")
+    cat("##########################################################", "\n")
+    cat("#############      Random Forest - Test      #############", "\n")
+    print(rfModel)
+    }
   
   # SVM model
   svmModel <- svm(Volume ~ Diameter + Height, data = test)
-  if(verbose){print(svmModel)} 
+  if(verbose){
+    cat("\n")
+    cat("##########################################################", "\n")
+    cat("############# Support Vector Machine - Test  #############", "\n")
+    print(svmModel)
+    cat("##########################################################", "\n")
+    cat("\n")
+    }
   
   # Make predictions on the test set
   lrTestPred <- predict(lrModel, newdata = test)
