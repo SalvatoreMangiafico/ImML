@@ -44,11 +44,13 @@
 #'         
 #' @note   The data frame must contain the numeric variables
 #'         \code{Volume}, \code{Height}, and \code{Diameter}.
-#'         \code{Volume} is used as the dependent variable.   
+#'         \code{Volume} is used as the dependent variable.
+#'         
+#'         The gray line in the plot is a 1:1 line.   
 #'          
 #' @examples
 #' data(EastCirclePine)
-#' ImML(EastCirclePine, plotit=FALSE)
+#' ImML(EastCirclePine, plotit=FALSE, setseed=123)
 #' 
 #' @importFrom caret createDataPartition MAE RMSE
 #' @importFrom dplyr bind_rows
@@ -124,14 +126,15 @@ ImML <- function(data, plotit=TRUE, setseed=NULL, verbose=FALSE, ...) {
     geom_point(aes(y = yDT, color = "Decision Tree")) +
     geom_point(aes(y = yRF, color = "Random Forest")) +
     geom_point(aes(y = ySVM, color = "Support Vector Machine")) +
+    geom_abline(slope=1, intercept=0, color="darkgray") +
     #geom_smooth(aes(y = yLR), method = "lm", formula = y ~ x, se = FALSE, color = "blue") +
     #geom_smooth(aes(y = yDT), method = "lm", formula = y ~ x, se = FALSE, color = "green") +
     #geom_smooth(aes(y = yRF), method = "lm", formula = y ~ x, se = FALSE, color = "purple") +
     #geom_smooth(aes(y = ySVM), method = "lm", formula = y ~ x, se = FALSE, color = "red")  +
     labs(
-      title = "Predicted Values for LR, SVM, RF, and DT Models",
-      x = "True Volume",
-      y = "Predicted Volume",
+      title = "Predicted Values for LR, SVM, RF, and DT Models\n",
+      x = "\nTrue Volume",
+      y = "Predicted Volume\n",
       color = "Model"
     ) +
     theme_bw()
