@@ -25,6 +25,8 @@ Imports:
     e1071 (>= 1.7-13),
     ggplot2 (>= 3.4.2)
 Maintainer: M. Iqbal Jeelani <jeelani.miqbal@gmail.com>
+URL: https://github.com/SalvatoreMangiafico/ImML
+BugReports: https://github.com/SalvatoreMangiafico/ImML/issues
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
